@@ -27,8 +27,8 @@ async def connect_to_device(address):
     print("disconnect from", address)
 
 
-def main(addresses):
-    return asyncio.gather(*(connect_to_device(address) for address in addresses))
+async def main(addresses):
+    await asyncio.gather(*(connect_to_device(address) for address in addresses))
 
 
 if __name__ == "__main__":
